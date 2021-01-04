@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>408</width>
-    <height>610</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -103,23 +103,59 @@
     <rect>
      <x>10</x>
      <y>120</y>
-     <width>391</width>
-     <height>481</height>
+     <width>351</width>
+     <height>471</height>
     </rect>
    </property>
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
+   <widget class="QWidget" name="question_items">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>387</width>
-      <height>477</height>
+      <width>347</width>
+      <height>467</height>
      </rect>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="add_question_btn">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>120</y>
+     <width>31</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="remove_question_btn">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>160</y>
+     <width>31</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
   </widget>
  </widget>
  <resources/>

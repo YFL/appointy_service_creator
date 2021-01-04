@@ -15,6 +15,9 @@ public:
     explicit QuestionItemWidget(QWidget *parent = nullptr);
     ~QuestionItemWidget();
 
+private slots:
+    void edit_clicked();
+
 private:
     Ui::QuestionItemWidget *ui;
 };

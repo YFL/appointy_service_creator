@@ -7,6 +7,8 @@
 #include <price.h>
 #include <appointy_time.h>
 
+#include <questionitemwidget.h>
+
 namespace Ui {
 class ServiceWidget;
 }
@@ -24,6 +26,9 @@ private slots:
     void price_changed(const QString &new_price);
     void duration_changed(const QString &new_duration);
     void questions_changed(const std::vector<appointy::Question> &new_questions);
+    void new_question_imbound(const std::string text, std::shared_ptr<appointy::AnswerSignature> answer_signature);
+
+    void on_add_question_btn_clicked();
 
 private:
     Ui::ServiceWidget *ui;

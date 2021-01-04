@@ -30,7 +30,7 @@
      <string>Question text:</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="question_text_edit">
+   <widget class="QPlainTextEdit" name="question_text">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -60,9 +60,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
+      <y>230</y>
       <width>351</width>
-      <height>461</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -84,7 +84,7 @@
       <property name="currentIndex">
        <number>1</number>
       </property>
-      <widget class="QWidget" name="int">
+      <widget class="QWidget" name="int_tab">
        <attribute name="title">
         <string>Integer number</string>
        </attribute>
@@ -167,7 +167,7 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="double">
+      <widget class="QWidget" name="double_tab">
        <attribute name="title">
         <string>Floating point number</string>
        </attribute>
@@ -252,7 +252,7 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="signle_option">
+    <widget class="QWidget" name="single_option">
      <attribute name="title">
       <string>Single option</string>
      </attribute>
@@ -333,6 +333,74 @@
        <string>Options:</string>
       </property>
      </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="type_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>41</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Type:</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="type_group_box">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QRadioButton" name="free_value_radio_btn">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>105</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Free value</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="single_option_radio_btn">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>105</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Single option</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="multiple_options_radio_btn">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>10</y>
+       <width>131</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Multiple options</string>
+     </property>
     </widget>
    </widget>
   </widget>
