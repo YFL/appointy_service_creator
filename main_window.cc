@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "main_window.h"
 #include "ui_mainwindow.h"
 
 #include <json.hpp>
@@ -15,16 +15,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto services_str = appointy::load_services_from_json("/home/yofuckinlo/Programming/bachelor_proj/appointy/services_examples.json");
     json services_json = json::parse(services_str);
-    std::vector<appointy::Service> services;
 
     for(auto &service : services_json)
     {
-        services.push_back(appointy::JSON_Parser::parse_service(service));
+        _services.push_back(appointy::JSON_Parser::parse_service(service));
     }
 
     std::string value;
 
-    for(auto &service : services)
+    for(auto &service : _services)
     {
         value += "-------------------------\n";
         value += service.to_string();

@@ -1,5 +1,5 @@
-#ifndef OPTIONITEMWIDGET_H
-#define OPTIONITEMWIDGET_H
+#ifndef OPTION_ITEM_WIDGET_H
+#define OPTION_ITEM_WIDGET_H
 
 #include <QWidget>
 
@@ -19,4 +19,4 @@ private:
     Ui::OptionItemWidget *ui;
 };
 
-#endif // OPTIONITEMWIDGET_H
+#endif // OPTION_ITEM_WIDGET_H

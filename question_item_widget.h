@@ -1,7 +1,9 @@
-#ifndef QUESTIONITEMWIDGET_H
-#define QUESTIONITEMWIDGET_H
+#ifndef QUESTION_ITEM_WIDGET_H
+#define QUESTION_ITEM_WIDGET_H
 
 #include <QWidget>
+
+#include <question.h>
 
 namespace Ui {
 class QuestionItemWidget;
@@ -20,6 +22,7 @@ private slots:
 
 private:
     Ui::QuestionItemWidget *ui;
+    appointy::Question question;
 };
 
-#endif // QUESTIONITEMWIDGET_H
+#endif // QUESTION_ITEM_WIDGET_H

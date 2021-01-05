@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MAIN_WINDOW_H
+#define MAIN_WINDOW_H
 
 #include <QMainWindow>
 
@@ -23,4 +23,4 @@ private:
 private:
     std::vector<appointy::Service> _services;
 };
-#endif // MAINWINDOW_H
+#endif // MAIN_WINDOW_H

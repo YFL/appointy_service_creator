@@ -110,7 +110,7 @@
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="question_items">
+   <widget class="QWidget" name="question_items_parent">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -119,6 +119,17 @@
       <height>467</height>
      </rect>
     </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>351</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="question_items"/>
+    </widget>
    </widget>
   </widget>
   <widget class="QPushButton" name="add_question_btn">
@@ -133,6 +144,8 @@
    <property name="font">
     <font>
      <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -151,6 +164,8 @@
    <property name="font">
     <font>
      <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
