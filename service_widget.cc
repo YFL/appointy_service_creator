@@ -1,8 +1,9 @@
 #include "service_widget.h"
-#include "ui_servicewidget.h"
+#include "ui_service_widget.h"
 
 #include <iostream>
 
+#include <QListWidget>
 #include <QVBoxLayout>
 
 #include <question_edit_window.h>
@@ -22,8 +23,10 @@ ServiceWidget::~ServiceWidget()
 
 void ServiceWidget::on_add_question_btn_clicked()
 {
-    std::cout << "yes" << std::endl;
     auto *widget = new QuestionItemWidget(this);
-    ((QLayout *)ui->question_items)->addWidget(widget);
+    auto *item = new QListWidgetItem {ui->question_items};
+    ui->question_items->addItem(item);
+    ui->question_items->setItemWidget(item, widget);
+    item->setSizeHint(QSize {378, 34});
     widget->show();
 }

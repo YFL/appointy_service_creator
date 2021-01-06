@@ -11,20 +11,25 @@ CONFIG += c++17
 SOURCES += \
     main.cc \
     main_window.cc \
+    option_edit_window.cc \
     option_item_widget.cc \
     question_edit_window.cc \
     question_item_widget.cc \
-    service_widget.cc
+    service_widget.cc \
+    util.cc
 
 HEADERS += \
     main_window.h \
+    option_edit_window.h \
     option_item_widget.h \
     question_edit_window.h \
     question_item_widget.h \
-    service_widget.h
+    service_widget.h \
+    util.h
 
 FORMS += \
     main_window.ui \
+    option_edit_window.ui \
     option_item_widget.ui \
     question_edit_window.ui \
     question_item_widget.ui \

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1323</width>
-    <height>600</height>
+    <width>1360</width>
+    <height>615</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>0</x>
       <y>0</y>
       <width>551</width>
-      <height>541</height>
+      <height>561</height>
      </rect>
     </property>
    </widget>
@@ -42,8 +42,8 @@
      <rect>
       <x>660</x>
       <y>0</y>
-      <width>651</width>
-      <height>541</height>
+      <width>691</width>
+      <height>561</height>
      </rect>
     </property>
    </widget>
@@ -53,7 +53,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1323</width>
+     <width>1360</width>
      <height>30</height>
     </rect>
    </property>
@@ -64,7 +64,7 @@
   <customwidget>
    <class>ServiceWidget</class>
    <extends>QWidget</extends>
-   <header>servicewidget.h</header>
+   <header>service_widget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

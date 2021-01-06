@@ -14,15 +14,19 @@ class QuestionItemWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit QuestionItemWidget(QWidget *parent = nullptr);
+    explicit QuestionItemWidget(appointy::Question *question = nullptr, QWidget *parent = nullptr);
     ~QuestionItemWidget();
 
+public:
+    auto question() const -> const appointy::Question;
+
 private slots:
-    void edit_clicked();
+    void edit_click();
+    void question_save(const std::string &text, std::shared_ptr<appointy::AnswerSignature> &answer_signature);
 
 private:
     Ui::QuestionItemWidget *ui;
-    appointy::Question question;
+    std::unique_ptr<appointy::Question> _question;
 };
 
 #endif // QUESTION_ITEM_WIDGET_H
