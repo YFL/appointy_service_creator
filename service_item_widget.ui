@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>OptionItemWidget</class>
- <widget class="QWidget" name="OptionItemWidget">
+ <class>ServiceItemWidget</class>
+ <widget class="QWidget" name="ServiceItemWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>282</width>
+    <width>360</width>
     <height>36</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="edit_btn">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>320</x>
      <y>0</y>
      <width>31</width>
      <height>34</height>
@@ -26,12 +26,12 @@
     <string>Edit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="text">
+  <widget class="QLabel" name="name">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>231</width>
+     <width>301</width>
      <height>18</height>
     </rect>
    </property>

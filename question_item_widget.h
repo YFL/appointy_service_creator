@@ -14,7 +14,7 @@ class QuestionItemWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit QuestionItemWidget(appointy::Question *question = nullptr, QWidget *parent = nullptr);
+    explicit QuestionItemWidget(const appointy::Question * const question = nullptr, QWidget *parent = nullptr);
     ~QuestionItemWidget();
 
 public:

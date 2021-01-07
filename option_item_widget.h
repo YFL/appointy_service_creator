@@ -14,7 +14,7 @@ class OptionItemWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit OptionItemWidget(const appointy::Option *option = nullptr, QWidget *parent = nullptr);
+    explicit OptionItemWidget(const appointy::Option * const option = nullptr, QWidget *parent = nullptr);
     ~OptionItemWidget();
 
 public:

@@ -15,11 +15,11 @@ class QuestionEditWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit QuestionEditWindow(appointy::Question *question, QWidget *parent = nullptr);
+    explicit QuestionEditWindow(const appointy::Question &question, QWidget *parent = nullptr);
     ~QuestionEditWindow();
 
 signals:
-    void save_btn_clicked(const std::string &text, std::shared_ptr<appointy::AnswerSignature> answer_signature);
+    void question_saved(const std::string &text, std::shared_ptr<appointy::AnswerSignature> &answer_signature);
 
 private slots:
     void free_value_radio_btn_state_change(bool checked);
@@ -31,6 +31,7 @@ private slots:
     void max_check_box_state_change(bool checked);
     void default_val_check_box_state_change(bool checked);
     void save_btn_click();
+    void cancel_btn_click();
     void add_option_btn_click();
     void remove_option_btn_click();
 

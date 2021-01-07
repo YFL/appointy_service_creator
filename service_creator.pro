@@ -15,7 +15,8 @@ SOURCES += \
     option_item_widget.cc \
     question_edit_window.cc \
     question_item_widget.cc \
-    service_widget.cc \
+    service_edit_window.cc \
+    service_item_widget.cc \
     util.cc
 
 HEADERS += \
@@ -24,7 +25,8 @@ HEADERS += \
     option_item_widget.h \
     question_edit_window.h \
     question_item_widget.h \
-    service_widget.h \
+    service_edit_window.h \
+    service_item_widget.h \
     util.h
 
 FORMS += \
@@ -33,7 +35,8 @@ FORMS += \
     option_item_widget.ui \
     question_edit_window.ui \
     question_item_widget.ui \
-    service_widget.ui
+    service_edit_window.ui \
+    service_item_widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

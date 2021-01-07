@@ -14,14 +14,15 @@ class OptionEditWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit OptionEditWindow(appointy::Option *option = nullptr, QWidget *parent = nullptr);
+    explicit OptionEditWindow(const appointy::Option &option, QWidget *parent = nullptr);
     ~OptionEditWindow();
 
 signals:
-    void save_btn_clicked(const std::string &text, const appointy::Price &price, const appointy::Time &time);
+    void option_saved(const std::string &text, const appointy::Price &price, const appointy::Time &time);
 
 private slots:
     void save_btn_click();
+    void cancel_btn_click();
 
 private:
     Ui::OptionEditWindow *ui;

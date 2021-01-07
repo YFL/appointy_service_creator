@@ -375,32 +375,6 @@
        <string>enable</string>
       </property>
      </widget>
-     <widget class="QLabel" name="duration_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>170</y>
-        <width>58</width>
-        <height>18</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Duration:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="price_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>210</y>
-        <width>58</width>
-        <height>18</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Price:</string>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="duration">
       <property name="geometry">
        <rect>
@@ -414,6 +388,19 @@
        <string>Format: h+:m{1,2}:s{1,2}</string>
       </property>
      </widget>
+     <widget class="QLabel" name="duration_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>58</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Duration:</string>
+      </property>
+     </widget>
      <widget class="QLineEdit" name="price">
       <property name="geometry">
        <rect>
@@ -425,6 +412,19 @@
       </property>
       <property name="placeholderText">
        <string>Format: [0-9]+([,.][0-9]+)?</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="price_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>58</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Price:</string>
       </property>
      </widget>
     </widget>
@@ -494,7 +494,7 @@
         <x>10</x>
         <y>20</y>
         <width>291</width>
-        <height>141</height>
+        <height>211</height>
        </rect>
       </property>
      </widget>
@@ -581,7 +581,7 @@
      <string>Save</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cancle_btn">
+   <widget class="QPushButton" name="cancel_btn">
     <property name="geometry">
      <rect>
       <x>260</x>

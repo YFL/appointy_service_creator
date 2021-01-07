@@ -17,6 +17,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void add_service_btn_click();
+    void remove_service_btn_click();
+
+    void new_session();
+    void open_services();
+    void save_services();
+    void save_services_as();
+
 private:
     Ui::MainWindow *ui;
 
