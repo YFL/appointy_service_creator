@@ -31,16 +31,19 @@ auto fill_answer_signature_data(QuestionEditWindow *parent, Ui::QuestionEditWind
         if(as.min)
         {
             ui->min_check_box->setChecked(true);
+            ui->min_spin_box->setEnabled(true);
             ui->min_spin_box->setValue(as.min.value());
         }
         if(as.max)
         {
             ui->max_check_box->setChecked(true);
+            ui->max_spin_box->setEnabled(true);
             ui->max_spin_box->setValue(as.max.value());
         }
         if(as.default_value)
         {
             ui->default_val_check_box->setChecked(true);
+            ui->default_spin_box->setEnabled(true);
             ui->default_spin_box->setValue(as.default_value.value());
         }
         ui->duration->setText(as.duration.to_string().c_str());
@@ -52,16 +55,19 @@ auto fill_answer_signature_data(QuestionEditWindow *parent, Ui::QuestionEditWind
         if(as.min)
         {
             ui->min_check_box->setChecked(true);
+            ui->min_double_spin_box->setEnabled(true);
             ui->min_double_spin_box->setValue(as.min.value());
         }
         if(as.max)
         {
             ui->max_check_box->setChecked(true);
+            ui->max_double_spin_box->setEnabled(true);
             ui->max_double_spin_box->setValue(as.max.value());
         }
         if(as.default_value)
         {
             ui->default_val_check_box->setChecked(true);
+            ui->default_double_spin_box->setEnabled(true);
             ui->default_double_spin_box->setValue(as.default_value.value());
         }
         ui->duration->setText(as.duration.to_string().c_str());
@@ -95,6 +101,9 @@ QuestionEditWindow::QuestionEditWindow(const appointy::Question &question, QWidg
     connect(ui->cancel_btn, &QPushButton::clicked, this, &QuestionEditWindow::cancel_btn_click);
     connect(ui->add_option_btn, &QPushButton::clicked, this, &QuestionEditWindow::add_option_btn_click);
     connect(ui->remove_option_btn, &QPushButton::clicked, this, &QuestionEditWindow::remove_option_btn_click);
+    connect(ui->min_check_box, &QCheckBox::toggled, this, &QuestionEditWindow::min_check_box_state_change);
+    connect(ui->max_check_box, &QCheckBox::toggled, this, &QuestionEditWindow::max_check_box_state_change);
+    connect(ui->default_val_check_box, &QCheckBox::toggled, this, &QuestionEditWindow::default_val_check_box_state_change);
 
     ui->question_text->setPlainText(QString {question.text.c_str()});
     if(question.answer_signature)

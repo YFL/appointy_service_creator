@@ -2,6 +2,7 @@
 #include "ui_main_window.h"
 
 #include <fstream>
+#include <sstream>
 
 #include <QFileDialog>
 
@@ -56,7 +57,60 @@ void MainWindow::new_session()
 
 void MainWindow::open_services()
 {
+    QFileDialog fod {};
+    fod.setFileMode(QFileDialog::ExistingFile);
+    fod.setAcceptMode(QFileDialog::AcceptOpen);
+    fod.setNameFilter({"JSON Files (*.json)"});
+    fod.setDefaultSuffix("json");
+    fod.setViewMode(QFileDialog::Detail);
 
+    if(fod.exec())
+    {
+        auto file_names = fod.selectedFiles();
+        for(auto &fn : file_names)
+        {
+            std::ifstream file {fn.toStdString()};
+            if(!file.is_open())
+            {
+                show_error_with_ok("Couldn't open file " + fn.toStdString(), std::strerror(errno));
+                continue;
+            }
+            using nlohmann::json;
+            std::string line;
+            std::stringstream ss;
+            while(std::getline(file, line))
+            {
+                ss << line << "\n";
+            }
+
+            json j;
+            try
+            {
+                j = json::parse(ss.str());
+            }
+            catch(const json::parse_error &e)
+            {
+                show_error_with_ok("Invalid contents in " + fn.toStdString(), e.what());
+                continue;
+            }
+
+            for(auto &service_json : j)
+            {
+                try
+                {
+                    appointy::Service service = appointy::JSON_Parser::parse_service(service_json);
+                    auto *widget = new ServiceItemWidget {&service, this};
+                    add_widget_to_list_widget(widget, ui->services, QSize {360, 36});
+                    widget->show();
+                }
+                catch(const appointy::Exception &e)
+                {
+                    show_error_with_ok("Couldn't parse service", e.what());
+                    continue;
+                }
+            }
+        }
+    }
 }
 
 void MainWindow::save_services()

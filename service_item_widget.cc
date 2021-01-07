@@ -18,6 +18,8 @@ ServiceItemWidget::ServiceItemWidget(appointy::Service *service, QWidget *parent
         _service = std::unique_ptr<Service> {new Service {{"0"}, {""}, {0, 0}, {0, 0, 0}, {}}};
     }
 
+    ui->name->setText(_service->name.c_str());
+
     connect(ui->edit_btn, &QPushButton::clicked, this, &ServiceItemWidget::edit_btn_click);
 }
 
