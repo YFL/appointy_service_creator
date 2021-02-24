@@ -12,7 +12,7 @@ QuestionItemWidget::QuestionItemWidget(const appointy::Question * const question
     ui->setupUi(this);
     if(!question)
     {
-        _question = std::unique_ptr<appointy::Question> {new appointy::Question {{""}, {""}, nullptr}};
+        _question = std::unique_ptr<appointy::Question> {new appointy::Question {{""}, nullptr}};
     }
     else
     {
@@ -42,6 +42,6 @@ auto QuestionItemWidget::edit_click() -> void
 
 void QuestionItemWidget::question_save(const std::string &text, std::shared_ptr<appointy::AnswerSignature> &answer_signature)
 {
-    _question = std::unique_ptr<appointy::Question> { new appointy::Question {_question->id, text, answer_signature}};
+    _question = std::unique_ptr<appointy::Question> { new appointy::Question {text, answer_signature}};
     ui->question_text->setText(_question->text.c_str());
 }

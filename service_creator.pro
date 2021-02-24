@@ -43,19 +43,14 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../appointy/build/appointy/Debug/bin/release/ -lappointy
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../appointy/build/appointy/Debug/bin/debug/ -lappointy
-else:unix: LIBS += -L$$PWD/../appointy/build/appointy/Debug/bin/ -lappointy
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../appointy/build/appointy_base/Debug/bin/ -lappointy_base
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../appointy/build/appointy_base/Debug/bin/ -lappointy_base
+else:unix: LIBS += -L$$PWD/../appointy/build/appointy_base/Debug/bin/ -lappointy_base
 
-INCLUDEPATH += $$PWD/../appointy/src
-INCLUDEPATH += $$PWD/../appointy/src/util
-INCLUDEPATH += $$PWD/../appointy/src/appointment
-INCLUDEPATH += $$PWD/../appointy/src/service
+INCLUDEPATH += $$PWD/../appointy/appointy_base/include/util
+INCLUDEPATH += $$PWD/../appointy/appointy_base/include/appointment
+INCLUDEPATH += $$PWD/../appointy/appointy_base/include/service
 INCLUDEPATH += $$PWD/../appointy/ext/json/include
 INCLUDEPATH += $$PWD/../appointy/ext/json/include/nlohmann
-DEPENDPATH += $$PWD/../appointy/src
+DEPENDPATH += $$PWD/../appointy/appointy_base
 
-unix|win32: LIBS += -lmongocxx
-unix|win32: LIBS += -lmongoc-1.0
-unix|win32: LIBS += -lbsoncxx
-unix|win32: LIBS += -lbson-1.0

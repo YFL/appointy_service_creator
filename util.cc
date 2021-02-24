@@ -1,10 +1,12 @@
-#include <util.h>
+#include "util.h"
 
 #include <sstream>
 
 #include <QMessageBox>
 
 #include <appointy_exception.h>
+
+static auto wrong_format = appointy::Exception {"The string provided is of wrong format"};
 
 auto split(const std::string &str, char delim) -> std::vector<std::string>
 {
@@ -24,10 +26,26 @@ auto string_to_time(const std::string &str) -> appointy::Time
     auto parts = split(str, ':');
     if(parts.size() != 3)
     {
-        throw appointy::Exception {"The string provided is of wrong format"};
+        throw wrong_format;
     }
 
     return appointy::Time
+    {
+        std::stoi(parts[0]),
+        std::stoi(parts[1]),
+        std::stoi(parts[2])
+    };
+}
+
+appointy::Date string_to_date(const std::string &str)
+{
+    auto parts = split(str, '.');
+    if(parts.size() != 3)
+    {
+        throw wrong_format;
+    }
+
+    return appointy::Date
     {
         std::stoi(parts[0]),
         std::stoi(parts[1]),
@@ -43,13 +61,13 @@ auto string_to_price(const std::string &str) -> appointy::Price
         parts = split(str, ',');
         if(parts.size() != 2)
         {
-            throw appointy::Exception {"The string provided is of wrong format"};
+            throw wrong_format;
         }
     }
 
     if(parts[1].length() > 2)
     {
-        throw appointy::Exception {"The string provided is of wrong format: too many characters after the decimal point"};
+        throw appointy::Exception {std::string {wrong_format.what()} + "too many characters after the decimal point"};
     }
 
     return appointy::Price
